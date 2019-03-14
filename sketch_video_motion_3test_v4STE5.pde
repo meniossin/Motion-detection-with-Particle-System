@@ -1,3 +1,9 @@
+/**
+*This code is a combination and a restructure from parts and concepts 
+*in Daniel Shiffman's youtube tutorials and his book "Nature of code".
+*
+*/
+
 import processing.video.*;
 import java.util.Iterator;
 

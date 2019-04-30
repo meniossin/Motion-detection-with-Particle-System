@@ -55,8 +55,8 @@ void draw(){
   threshold = 97;
   
   // Begin loop to walk through every pixel
-  for (int x = 0; x < video.width; x = x + 4 ) { // every how many actual pixels, a motion pixel should be calculated and particle added.
-    for (int y = 0 ; y < video.height; y = y + 5 ) { //the lower the number, the more actual pixels taken into accoutn and the more particles are created.
+  for (int x = 0; x < video.width; x = x + 4 ) { // for every(4) pixels in the video grid, a motion pixel should be calculated and particle added.
+    for (int y = 0 ; y < video.height; y = y + 5 ) { //the lower the number, the more actual pixels taken into account and thus, more particles are created.
 
       int loc = x + y*video.width;            // Step 1, what is the 1D pixel location
       color current = video.pixels[loc];      // Step 2, what is the current color
@@ -73,7 +73,7 @@ void draw(){
 
       // Step 5, How different are the colors?
       // If the color at that pixel has changed by %, then there is motion at that pixel.
-      if (diff > threshold && x % 8 == 0 && y % 20 == 0) {  //the bigger % the less sensitivity to motion and less particles created
+      if (diff > threshold && x % 8 == 0 && y % 20 == 0) {  //the bigger % the less sensitivity to motion and thus less particles created
           avgX += x;
           avgY += y;
           count++;
